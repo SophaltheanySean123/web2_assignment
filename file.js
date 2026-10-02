@@ -37,7 +37,6 @@ const createPost = (title, content, id) => {
     post.setAttribute("id", postId)
     post.className = "post"
 
-    // row 1: title + Edit Title button
     const titleRow = document.createElement("div")
     titleRow.className = "title-row"
 
@@ -51,11 +50,9 @@ const createPost = (title, content, id) => {
     titleRow.appendChild(postTitle)
     titleRow.appendChild(editTitleBtn)
 
-    // row 2: content
     const postContent = document.createElement("p")
     postContent.textContent = content
 
-    // row 3: Edit Content + Delete Post buttons
     const actions = document.createElement("div")
     actions.className = "post-actions"
 
@@ -98,7 +95,6 @@ const editTitle = (id) => {
     const postTitle = document.getElementById(id).querySelector("h2")
     const newTitle = prompt("Update the title:", postTitle.textContent)
 
-    // keep the old title if the user pressed Cancel or left it empty
     if (newTitle === null || newTitle.trim() === "") {
         return
     }
@@ -127,7 +123,6 @@ const deletePost = (id) => {
     }
 }
 
-// load the starting posts
 let id = 1
 postList.forEach((post) => {
     createPost(post.title, post.content, id)
