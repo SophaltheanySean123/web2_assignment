@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Application</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            padding: 4px 10px;
+            cursor: pointer;
+        }
+
+        /* two posts per row */
+        #blog-posts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .post {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .title-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .title-row h2 {
+            margin: 0;
+        }
+
+        .post p {
+            font-size: 18px;
+        }
+
+        .post-actions button {
+            margin-right: 10px;
+        }
+
+        .empty {
+            color: #777;
+        }
+
+        @media (max-width: 700px) {
+            #blog-posts-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Blog Post Application</h1>
+    <section>
+        <button id="add-post-btn">Add Blog Post</button>
+        <div id="blog-posts-container"></div>
+    </section>
+
+    <script src="file.js"></script>
+</body>
+</html>
